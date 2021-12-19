@@ -1,0 +1,99 @@
+.header {
+  /* линия в хедере */
+  border-bottom: 1px solid #ececec;
+}
+.header__container {
+  display: flex;
+  align-items: center;
+}
+
+/*====Навигация в HEDER====*/
+.header__navigation {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+}
+.menu__item {
+  position: relative;
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+/* ссылки на студия/контакты/портфолио */
+.menu__link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  @include font(14px, 500, 1.14, 0.02em);
+  color: var(--title-color);
+
+  transition: color 250ms
+    cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+/* Подсвечивает текущую страницу  */
+.menu__link--current {
+  color: var(--accent-color);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+  }
+}
+
+/*АВТОРИЗАЦИЯ
+Почта телефон в шапке*/
+.header-contact {
+  display: flex;
+  margin-left: auto;
+}
+/* хедер - ссылки на маил и телефон */
+.header-contact__link {
+  display: flex;
+  align-items: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  @include font(14px, 500, 1.14, 0.02em);
+  color: var(--text-color);
+
+  transition: color 250ms
+    cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+.header-contact__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.header-contact__mail {
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+  fill: currentColor; /*значение цвета родителя, 
+  те как в ссылке с email даже при ховере и фокусе */
+}
+
+.header-contact__tel {
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+  fill: currentColor;
+}

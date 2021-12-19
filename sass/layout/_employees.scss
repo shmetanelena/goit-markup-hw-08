@@ -1,0 +1,40 @@
+/*Наша команда*/
+.employees {
+  display: flex;
+  flex-wrap: wrap;
+}
+.employees__item {
+  width: calc((100% - 30px * 3) / 4);
+  // margin-right: 30px;
+  background-color: var(--main-title-color);
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  &:not(:last-child) {
+    margin-right: 30px;
+    // margin-right: 0;
+  }
+}
+
+.employees__name {
+  @include font(16px, 500, 1.19, 0.03em);
+  color: var(--title-color);
+  margin-bottom: 10px;
+  text-align: center;
+}
+.employees__position {
+  margin-bottom: 16px;
+  @include font(16px, 400, 1.19, 0.03em);
+  text-align: center;
+}
+
+.employees__img {
+  text-align: center;
+}
+
+.employees__imgname {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}

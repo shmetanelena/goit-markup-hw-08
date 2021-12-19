@@ -1,0 +1,52 @@
+.hero {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1600px;
+  height: 600px;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url('../images/heroimg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  text-align: center;
+  background-color: var(
+    --secondary-background-color
+  );
+}
+.hero__title {
+  width: 696px;
+  height: 120px;
+  margin: 0 auto 30px auto;
+  @include font(44px, 900, 1.36, 0.06em);
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--main-title-color);
+}
+
+.hero__button {
+  display: inline-block;
+  width: 200px; /* минимальная ширина кнопки, чб избежать переполнения*/
+  min-height: 50px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  @include font(16px, 700, 1.88, 0.06em);
+  color: var(--main-title-color);
+  background-color: var(--accent-color);
+  cursor: pointer;
+  border: transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition: background-color 250ms
+    cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:focus,
+  &:hover {
+    background-color: var(--accent-button-color);
+  }
+}

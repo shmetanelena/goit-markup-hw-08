@@ -789,15 +789,13 @@ body {
 .work {
   display: flex;
   flex-wrap: wrap;
+  margin: -15px;
 }
 
 .work__item {
-  width: calc((100% - 30px * 2) / 3);
+  width: calc((100% - 15px * 6) / 3);
+  margin: 15px;
   position: relative;
-}
-
-.work__item:not(:last-child) {
-  margin-right: 30px;
 }
 
 .work__subtitle {

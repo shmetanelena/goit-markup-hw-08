@@ -2,17 +2,14 @@
 .work {
   display: flex;
   flex-wrap: wrap;
+  margin: -15px;
 }
 
 .work__item {
-  width: calc((100% - 30px * 2) / 3);
-  // margin-right: 30px;
+  width: calc((100% - 15px * 6) / 3);
+  margin: 15px;
 
   position: relative;
-  &:not(:last-child) {
-    margin-right: 30px;
-    // margin: 0;
-  }
 }
 
 .work__subtitle {

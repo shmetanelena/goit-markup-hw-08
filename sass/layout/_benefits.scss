@@ -1,19 +1,25 @@
 /*Наши преимущества
 Внимание к деталям\Пунктуальность\Планирование\Современные технологии*/
 .benefits {
-  display: flex;
-  flex-wrap: wrap;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
 }
 .benefits__item {
-  width: calc((100% - 30px * 3) / 4);
-  // margin-right: 30px;
   &:not(:last-child) {
-    margin-right: 30px;
-    // margin: 0;
+    margin-bottom: 30px;
   }
-  // &:nth-child(4) {
-  //   margin: 0;
-  // }
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 15px * 4) / 2);
+    margin: 15px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 15px * 8) / 4);
+    margin: 15px;
+  }
 }
 
 /* Антена, часы, диаграмма,  Космонавт*/
@@ -31,17 +37,18 @@
   height: 70px;
 }
 .benefits__title {
-  margin-top: 0;
   margin-bottom: 10px;
-  width: 270px;
-  margin-top: 0;
-  margin-bottom: 10px;
+
+  text-align: center;
   @include font(14px, 700, 1.14, 0.03em);
-  text-align: left;
   text-transform: uppercase;
   color: var(--title-color);
+
+  @media screen and (min-width: 768px) {
+    text-align: start;
+  }
 }
 .benefits__text {
   @include font(14px, 400, 1.71, 0.03em);
-  text-align: left;
+  // text-align: left;
 }

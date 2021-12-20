@@ -813,7 +813,7 @@ body {
   background-color: rgba(47, 48, 58, 0.8);
 }
 
-/*====Наша команда====*/
+/*==== Наша команда ====*/
 @media screen and (min-width: 768px) {
   .employees {
     display: flex;
@@ -846,10 +846,6 @@ body {
     width: calc((100% - 15px * 8) / 4);
     margin: 15px;
   }
-}
-
-.employees__img {
-  margin: auto;
 }
 
 .employees__border {

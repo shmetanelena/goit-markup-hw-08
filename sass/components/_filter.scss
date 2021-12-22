@@ -2,7 +2,7 @@
 .filter {
   display: flex;
   flex-wrap: wrap;
-  
+
   @media screen and (min-width: 768px) {
     justify-content: center;
   }
@@ -19,9 +19,9 @@
   }
 }
 
-  // justify-content: center;
-  // margin-bottom: 50px;
-}
+// justify-content: center;
+// margin-bottom: 50px;
+
 /* В списке кнопок добавмли пробелы по 8 */
 // .filter__item + .filter__item {
 //   margin-left: 8px;

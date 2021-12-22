@@ -1,13 +1,48 @@
 /* Выровняли в ряд по центру*/
 .filter {
   display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+  flex-wrap: wrap;
+  
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+  }
+
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 50px;
+  }
+}
+
+  // justify-content: center;
+  // margin-bottom: 50px;
 }
 /* В списке кнопок добавмли пробелы по 8 */
-.filter__item + .filter__item {
-  margin-left: 8px;
+// .filter__item + .filter__item {
+//   margin-left: 8px;
+// }
+.filter__item {
+  &:not(:last-child) {
+    margin-right: 8px;
+    margin-bottom: 15px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &:nth-last-child(-n + 2) {
+    @media screen and (max-width: 479px) {
+      margin-bottom: 0;
+    }
+  }
 }
+
 .filter__button {
   padding: 6px 22px;
   @include font(16px, 500, 1.62, 0.03em);

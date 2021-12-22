@@ -90,9 +90,13 @@
   display: flex;
   margin-bottom: 30px;
   align-items: center;
-  @include font(14px, 400, 1.71, 0.03em);
+  @include font(12px, 400, 1.17, 0.03em);
   cursor: pointer;
   color: var(--text-color);
+
+  @media screen and (min-width: 1200px) {
+    @include font(14px, 400, 1.71, 0.03em);
+  }
 }
 
 .modal__checkbox-icon {

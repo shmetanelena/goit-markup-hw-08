@@ -114,17 +114,33 @@ body {
   display: block;
   min-height: 31px;
   font-family: Raleway, sans-serif;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
-  line-height: 1.19;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--accent-color);
 }
 
+@media screen and (min-width: 1200px) {
+  .logo {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+  }
+}
+
 .header__logo {
-  margin-right: 93px;
-  padding-top: 24px;
-  padding-bottom: 25px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+@media screen and (min-width: 1200px) {
+  .header__logo {
+    padding-top: 24px;
+    padding-bottom: 25px;
+    margin-right: 93px;
+  }
 }
 
 .logo--dark {
@@ -133,7 +149,6 @@ body {
 
 .footer__logo {
   margin-bottom: 20px;
-  min-height: 31px;
 }
 
 .logo--light {
@@ -335,7 +350,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  width: calc(100%-30px);
+  width: calc(100% - 30px);
   max-width: 450px;
   min-height: 609px;
   background-color: #fff;
@@ -484,12 +499,21 @@ body {
   display: flex;
   margin-bottom: 30px;
   align-items: center;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
-  line-height: 1.71;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   cursor: pointer;
   color: var(--text-color);
+}
+
+@media screen and (min-width: 1200px) {
+  .modal__checkbox-label {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+  }
 }
 
 .modal__checkbox-icon {

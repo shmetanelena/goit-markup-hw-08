@@ -3,13 +3,23 @@
   display: block;
   min-height: 31px;
   font-family: Raleway, sans-serif;
-  @include font(26px, 700, 1.19, 0.03em);
+  @include font(24px, 700, 1.17, 0.03em);
   color: var(--accent-color);
+
+  @media screen and (min-width: 1200px) {
+    @include font(26px, 700, 1.19, 0.03em);
+  }
 }
 .header__logo {
-  margin-right: 93px;
-  padding-top: 24px;
-  padding-bottom: 25px;
+  // margin-right: 93px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 24px;
+    padding-bottom: 25px;
+    margin-right: 93px;
+  }
 }
 .logo--dark {
   color: var(--title-color);
@@ -17,7 +27,7 @@
 
 .footer__logo {
   margin-bottom: 20px;
-  min-height: 31px;
+  // min-height: 31px;
 }
 .logo--light {
   color: var(--main-title-color);

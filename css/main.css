@@ -572,8 +572,148 @@ body {
 
 /*====Навигация в HEDER====*/
 .header__navigation {
-  display: flex;
   align-items: center;
+}
+
+.nav__menu-button {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  line-height: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .nav__menu-button {
+    display: none;
+  }
+}
+
+.nav__menu-button:hover, .nav__menu-button:focus {
+  fill: var(--accent-color);
+}
+
+.nav__menu-button--close {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.mobile-menu {
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 40px;
+  background-color: var(--main-title-color);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.mob-nav__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mob-nav__link {
+  font-family: Roboto;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: var(--title-color);
+}
+
+@media screen and (max-width: 479px) {
+  .mob-nav__link {
+    font-size: 8vw;
+  }
+}
+
+.mob-nav__link--current {
+  color: var(--accent-color);
+}
+
+.mobile-contacts__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mobile-contacts__tel {
+  font-family: Roboto;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  color: var(--accent-color);
+}
+
+@media screen and (max-width: 479px) {
+  .mobile-contacts__tel {
+    font-size: 8vw;
+  }
+}
+
+.mobile-contacts__mail {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: var(--text-color);
+}
+
+@media screen and (max-width: 479px) {
+  .mobile-contacts__mail {
+    font-size: 5vw;
+  }
+}
+
+.mobile-social {
+  margin-top: 64px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mobile-social__item:not(:last-child) {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.mobile-social__link {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  color: var(--accent-color);
+}
+
+.mobile-contacts-box {
+  margin-top: auto;
+}
+
+.header__navigation {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .header__navigation {
+    display: block;
+  }
 }
 
 .menu {
@@ -584,8 +724,8 @@ body {
   position: relative;
 }
 
-.menu__item:not(:last-child) {
-  margin-right: 50px;
+.menu__item + .menu__item {
+  margin-left: 50px;
 }
 
 /* ссылки на студия/контакты/портфолио */
@@ -623,17 +763,38 @@ body {
 
 /*АВТОРИЗАЦИЯ
 Почта телефон в шапке*/
-.header-contact {
-  display: flex;
-  margin-left: auto;
+.header-contacts {
+  display: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .header-contacts {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header-contacts {
+    display: flex;
+    margin-left: auto;
+  }
+}
+
+.header-contacts__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+@media screen and (max-width: 1199px) {
+  .header-contacts__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 
 /* хедер - ссылки на маил и телефон */
-.header-contact__link {
+.header-contacts__link {
   display: flex;
   align-items: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.14;
@@ -642,15 +803,15 @@ body {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header-contact__link:hover, .header-contact__link:focus {
+.header-contacts__link:hover, .header-contacts__link:focus {
   color: var(--accent-color);
 }
 
-.header-contact__item:not(:last-child) {
+.header-contacts__item:not(:last-child) {
   margin-right: 50px;
 }
 
-.header-contact__mail {
+.header-contacts__mail {
   width: 16px;
   height: 12px;
   margin-right: 10px;
@@ -659,7 +820,7 @@ body {
   те как в ссылке с email даже при ховере и фокусе */
 }
 
-.header-contact__tel {
+.header-contacts__tel {
   width: 10px;
   height: 16px;
   margin-right: 10px;
@@ -997,8 +1158,6 @@ body {
 }
 
 /*КАРТОЧКИ*/
-/* flex-wrap задаёт правила вывода 
-flex-элементов —  в одну строку или в несколько */
 .cards {
   display: flex;
   flex-wrap: wrap;

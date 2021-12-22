@@ -2,24 +2,147 @@
   /* линия в хедере */
   border-bottom: 1px solid #ececec;
 }
-// .header__container {
-//   display: flex;
-//   align-items: center;
-// }
 
 /*====Навигация в HEDER====*/
 .header__navigation {
-  display: flex;
+  // display: flex;
   align-items: center;
 }
+.nav__menu-button {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  line-height: 0;
 
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+  }
+}
+
+.nav__menu-button--close {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.mobile-menu {
+  position: fixed;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  padding: 48px 40px;
+
+  background-color: var(--main-title-color);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 250ms
+      cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+}
+
+.mob-nav__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mob-nav__link {
+  font-family: Roboto;
+
+  @include font(40px, 500, 1.17, 00.02em);
+
+  @media screen and (max-width: 479px) {
+    font-size: 8vw;
+  }
+  color: var(--title-color);
+
+  &--current {
+    color: var(--accent-color);
+  }
+}
+
+.mobile-contacts__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mobile-contacts__tel {
+  font-family: Roboto;
+  @include font(34px, 500, 1.18, 0.02em);
+
+  color: var(--accent-color);
+
+  @media screen and (max-width: 479px) {
+    font-size: 8vw;
+  }
+}
+
+.mobile-contacts__mail {
+  font-family: Roboto;
+  @include font(24px, 500, 1.17, 0.02em);
+
+  color: var(--text-color);
+  @media screen and (max-width: 479px) {
+    font-size: 5vw;
+  }
+}
+
+.mobile-social {
+  margin-top: 64px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mobile-social__item:not(:last-child) {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.mobile-social__link {
+  @include font(18px, 500, 1.22, 0.02em);
+  color: var(--accent-color);
+}
+
+.mobile-contacts-box {
+  margin-top: auto;
+}
+// =======
+.header__navigation {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
 .menu {
   display: flex;
 }
 .menu__item {
   position: relative;
-  &:not(:last-child) {
-    margin-right: 50px;
+  & + & {
+    margin-left: 50px;
   }
 }
 
@@ -58,16 +181,34 @@
 
 /*АВТОРИЗАЦИЯ
 Почта телефон в шапке*/
-.header-contact {
-  display: flex;
-  margin-left: auto;
+.header-contacts {
+  display: none;
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: flex;
+    flex-direction: column;
+    // margin-left: auto;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    margin-left: auto;
+  }
 }
+
+.header-contacts__item:not(:last-child) {
+  margin-right: 50px;
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 10px;
+  }
+}
+
 /* хедер - ссылки на маил и телефон */
-.header-contact__link {
+.header-contacts__link {
   display: flex;
   align-items: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  // padding-top: 32px;
+  // padding-bottom: 32px;
   @include font(14px, 500, 1.14, 0.02em);
   color: var(--text-color);
 
@@ -79,11 +220,11 @@
     color: var(--accent-color);
   }
 }
-.header-contact__item:not(:last-child) {
+.header-contacts__item:not(:last-child) {
   margin-right: 50px;
 }
 
-.header-contact__mail {
+.header-contacts__mail {
   width: 16px;
   height: 12px;
   margin-right: 10px;
@@ -91,7 +232,7 @@
   те как в ссылке с email даже при ховере и фокусе */
 }
 
-.header-contact__tel {
+.header-contacts__tel {
   width: 10px;
   height: 16px;
   margin-right: 10px;

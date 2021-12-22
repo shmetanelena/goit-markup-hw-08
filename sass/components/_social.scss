@@ -49,8 +49,27 @@
     fill: var(--main-title-color);
   }
 }
+// .footer__social {
+//   margin-left: 70px;
+// }
 .footer__social {
-  margin-left: 70px;
+  text-align: center;
+
+  @media screen and (min-width: 1200px) {
+    margin-left: 70px;
+    text-align: start;
+    margin-bottom: 0;
+  }
+}
+
+.footer {
+  .social__link {
+    background-color: rgba(255, 255, 255, 0.1);
+    &:hover,
+    &:focus {
+      background-color: var(--accent-color);
+    }
+  }
 }
 .footer {
   .social__item {

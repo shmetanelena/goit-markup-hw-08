@@ -40,7 +40,7 @@
 .footer__phone-link {
   @include font(14px, 400, 1.71, 0.03em);
   color: rgba(255, 255, 255, 0.6);
-
+  font-style: normal;
   transition: color 250ms
     cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,

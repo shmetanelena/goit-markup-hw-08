@@ -105,9 +105,9 @@
   @include font(24px, 500, 1.17, 0.02em);
 
   color: var(--text-color);
-  @media screen and (max-width: 479px) {
-    font-size: 5vw;
-  }
+  // @media screen and (max-width: 479px) {
+  //   font-size: 5vw;
+  // }
 }
 
 .mobile-social {

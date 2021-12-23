@@ -782,12 +782,6 @@ body {
   color: var(--text-color);
 }
 
-@media screen and (max-width: 479px) {
-  .mobile-contacts__mail {
-    font-size: 5vw;
-  }
-}
-
 .mobile-social {
   margin-top: 64px;
   display: flex;

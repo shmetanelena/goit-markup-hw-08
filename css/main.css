@@ -756,12 +756,6 @@ body {
   color: var(--title-color);
 }
 
-@media screen and (max-width: 479px) {
-  .mob-nav__link {
-    font-size: 8vw;
-  }
-}
-
 .mob-nav__link--current {
   color: var(--accent-color);
 }
@@ -777,12 +771,6 @@ body {
   line-height: 1.18;
   letter-spacing: 0.02em;
   color: var(--accent-color);
-}
-
-@media screen and (max-width: 479px) {
-  .mobile-contacts__tel {
-    font-size: 8vw;
-  }
 }
 
 .mobile-contacts__mail {
